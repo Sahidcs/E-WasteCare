@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/product.css">
+    <script src="https://unpkg.com/js-alert/dist/jsalert.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Products</title>
+  <link rel="shortcut icon" href="/images/logoewaste.jpeg" type="image/x-icon">
+</head>
+<body>
+  
+    <header>
+    
+        <h1>E-Waste Products for Sell</h1>
+  <a href="/"> <span class="material-symbols-outlined">
+            home
+            </span></a>
+        <a href="/cart"><span class="material-symbols-outlined">
+            shopping_cart
+            </span></a>
+            <a href="/dashBoard">
+                <span class="material-symbols-outlined">
+                    account_circle
+                    </span>
+            </a>
+            <a href="/logout">
+                <span class="material-symbols-outlined">
+                    logout
+                    </span>
+            </a>
+    </header>
+    <main>
+        <% data.forEach(function(item) { %>
+         
+            <section class="product">
+                <img src="data:image/<%=item.image.contentType%>;base64,<%=item.image.data.toString('base64')%>" alt="" srcset="">
+              
+                <div class="product-info">
+                    <h2><%=item.nameOfProduct %></h2>
+                    <p><%=item.discription %></p>
+                    <span class="price"><%=item.price %></span>
+                    <button class="buy-button">Buy Now</button>
+                </div>
+            </section>
+         <% }); %> 
+        
+        <section class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReBgU_zf96sHHj9nmVjTXYeS8rRzWmi0TvPmaG3G6uGLDXB7E0PRcSg8MMYBS6XR8CMoQ&usqp=CAU" alt="Product 2">
+            <div class="product-info">
+                <h2>Storage Bulb</h2>
+                <p>A stylish bulb-shaped storage container for keeping small items. Functional and decorative.</p>
+                <span class="price">19.99</span>
+                <button class="buy-button">Buy Now</button>
+            </div>
+        </section>
+        <section class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAK3fL6ajFSujWpt4wyr4VQgXfoYL3Uv4k4ScgbYGipu9nDIbuxAPT-ua33JZxbWdUfZQ&usqp=CAU" alt="Product 3">
+            <div class="product-info">
+                <h2>Monitor Aquarium</h2>
+                <p>Turn your old computer monitor into a captivating aquarium. An eco-friendly and mesmerizing home for aquatic life.</p>
+                <span class="price">349.99</span>
+                <button class="buy-button">Buy Now</button>
+            </div>    
+        </section>
+        <section class="product">
+            <img src="data:image/jpeg;base64,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" alt="Product 4">
+            <div class="product-info">
+                <h2>GreenTech Laptop</h2>
+                <p>A refurbished laptop made from recycled e-waste components. High performance and eco-friendly.</p>
+                <span class="price">449.99</span>
+                <button class="buy-button">Buy Now</button>
+            </div>
+        </section>
+        <section class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8XyNgwRIfrtnGaY2LLQrv8ye4duS0FtDnHQ&usqp=CAU" alt="Product 5">
+            <div class="product-info">
+                <h2>Eco-Smartphone</h2>
+                <p>Stay connected sustainably with our eco-friendly smartphone, featuring a recycled body and efficient components.</p>
+                <span class="price">299.99</span>
+                <button class="buy-button">Buy Now</button>
+            </div>
+        </section>
+        
+        <!-- Add more product sections here -->
+        <div id="product-details-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <img class="modal-image" src="" alt="" width="300px" height="250px">
+                <div class="modal-info">
+                    <h2 class="modal-product-name"></h2>
+                    <p class="modal-product-description"></p>
+                    <span class="modal-product-price"></span>
+                    <button class="add-to-cart-button" onclick="add()" >Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<script>
+ async function add(){
+    const config = { headers: { "Content-Type": "application/json" } };
+    const product={
+        nameOfProduct:   document.querySelector('.modal-product-name').textContent,
+        img: document.querySelector('.modal-image').src,
+        price:  document.querySelector('.modal-product-price').textContent,
+        discription:document.querySelector('.modal-product-description').textContent,
+ 
+    }
+    const data=  await axios.post('/addToCart',product);
+   
+    JSAlert.alert("<code >item added succesfully </code >",null,JSAlert.Icons.Success).dismissIn(1000 * 1);
+       
+     }
+</script>
+    <script src="/javascripts/product.js"></script>
+</body>
+</html>
